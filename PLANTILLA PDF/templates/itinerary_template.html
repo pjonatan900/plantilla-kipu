@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Itinerario de Vuelo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .header, .details {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            text-align: left;
+            font-size: 24px;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .details-table th, .details-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .details-table th {
+            background-color: #f2f2f2;
+        }
+        .flight-info {
+            margin-top: 20px;
+        }
+        .flight-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .flight-info th, .flight-info td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Itinerario de Vuelo</h1>
+            <p>Preparado para: <strong>{{ passenger_name }}</strong></p>
+            <p>Código de reserva: <strong>{{ reservation_code }}</strong></p>
+        </div>
+
+        <div class="details">
+            <table class="details-table">
+                <tr>
+                    <th>Vuelo</th>
+                    <td>{{ flight_number }} - {{ airline_name }}</td>
+                </tr>
+                <tr>
+                    <th>Salida</th>
+                    <td>{{ departure_city }} - {{ departure_airport }} <br> {{ departure_time }}</td>
+                </tr>
+                <tr>
+                    <th>Llegada</th>
+                    <td>{{ arrival_city }} - {{ arrival_airport }} <br> {{ arrival_time }}</td>
+                </tr>
+                <tr>
+                    <th>Duración</th>
+                    <td>{{ duration }}</td>
+                </tr>
+                <tr>
+                    <th>Avión</th>
+                    <td>{{ aircraft }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="flight-info">
+            <h3>Detalles del vuelo</h3>
+            <table>
+                <tr>
+                    <th>Aeropuerto de salida</th>
+                    <td>{{ departure_airport }}</td>
+                </tr>
+                <tr>
+                    <th>Terminal de salida</th>
+                    <td>{{ departure_terminal }}</td>
+                </tr>
+                <tr>
+                    <th>Aeropuerto de llegada</th>
+                    <td>{{ arrival_airport }}</td>
+                </tr>
+                <tr>
+                    <th>Terminal de llegada</th>
+                    <td>{{ arrival_terminal }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>Comidas: {{ meals }}</p>
+            <p>Equipaje permitido: {{ baggage_info }}</p>
+        </div>
+    </div>
+</body>
+</html>
